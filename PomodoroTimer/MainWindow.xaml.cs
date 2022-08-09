@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,17 @@ namespace PomodoroTimer
     /// </summary>
     public partial class MainWindow : Window
     {
+        Sound sound = new Sound(1, "Fire", "../../../../Sounds/fireplace.wav");
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void test_Click(object sender, RoutedEventArgs e)
+        {
+            //Console.WriteLine(Environment.CurrentDirectory);
+            Trace.WriteLine(Environment.CurrentDirectory);
+            sound.play();
         }
     }
 }
